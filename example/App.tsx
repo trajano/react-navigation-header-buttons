@@ -20,8 +20,8 @@ import { OverflowMenuProvider } from 'react-navigation-header-buttons';
 import { ActionSheetProvider } from '@expo/react-native-action-sheet';
 import { StatusBar } from 'expo-status-bar';
 import { ThemeContext, ThemeProvider } from './ThemeProvider';
-import { createStackNavigator } from '@react-navigation/stack';
-// import { createNativeStackNavigator as createStackNavigator } from 'react-native-screens/native-stack';
+// import { createStackNavigator } from '@react-navigation/stack';
+import { createNativeStackNavigator as createStackNavigator } from '@react-navigation/native-stack';
 
 const screens = {
   HomeScreen,

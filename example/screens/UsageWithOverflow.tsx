@@ -16,11 +16,11 @@ const MaterialHeaderButton = (props) => (
 
 const RightHeader = () => (
   <HeaderButtons HeaderButtonComponent={MaterialHeaderButton}>
-    <Item title="person" iconName="person" onPress={() => alert('person')} />
-    <Item title="edit" onPress={() => alert('edit')} />
+    <Item title="person" iconName="person" onPress={() => alert('person2')} />
+    <Item title="edit" onPress={() => alert('edit')} pressColor="red" />
     <OverflowMenu
       OverflowIcon={<MaterialIcons name="more-vert" size={23} color="blue" />}
-      pressColor="blue"
+      pressColor="red"
       onPress={(params) => {
         defaultOnOverflowMenuPress({
           ...params,

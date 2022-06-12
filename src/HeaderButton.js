@@ -76,10 +76,9 @@ export function HeaderButton(props: HeaderButtonProps): React.Node {
 
   return (
     <PlatformPressable
-      borderless
+      android_ripple={{ foreground: true, borderless: true, radius: 20 }}
       onPress={handlePress}
       hitSlop={BUTTON_HIT_SLOP}
-      rippleRadius={20}
       style={StyleSheet.compose(styles.buttonContainer, style)}
       pressColor={usedPressColor}
       {...other}

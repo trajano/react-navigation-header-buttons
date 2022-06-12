@@ -1,5 +1,6 @@
 import { Component, ComponentProps, ComponentType, ReactNode, ReactChild } from 'react';
-import { TextStyle, TouchableWithoutFeedback, ViewStyle, View, StyleProp } from 'react-native';
+import { TextStyle, ViewStyle, View, StyleProp } from 'react-native';
+import { PlatformPressable } from '@react-navigation/elements';
 
 export interface CommonHeaderButtonProps {
   /**
@@ -72,10 +73,10 @@ export interface HeaderButtonsProps {
 
 declare class HeaderButtons extends Component<HeaderButtonsProps> {}
 
+interface PressableProps extends Omit<ComponentProps<typeof PlatformPressable>, 'children'> {}
+
 // From HeaderButtons.js as ItemProps
-export interface HeaderItemProps
-  extends HeaderButtonProps,
-    React.ComponentProps<typeof TouchableWithoutFeedback> {}
+export interface HeaderItemProps extends HeaderButtonProps, PressableProps {}
 
 declare class Item extends Component<HeaderItemProps> {}
 
@@ -106,14 +107,16 @@ export interface OnOverflowMenuPressParams {
   cancelButtonLabel?: string;
 }
 
-declare class OverflowMenu extends Component<{
-  children: ReactChild | Array<ReactNode>;
-  onPress?: (parameter: OnOverflowMenuPressParams) => any;
-  OverflowIcon: ReactNode | ComponentType<any>;
-  style?: StyleProp<ViewStyle>;
-  testID?: string;
-  accessibilityLabel?: string;
-}> {}
+declare class OverflowMenu extends Component<
+  PressableProps & {
+    children: ReactChild | Array<ReactNode>;
+    onPress?: (parameter: OnOverflowMenuPressParams) => any;
+    OverflowIcon: ReactNode | ComponentType<any>;
+    style?: StyleProp<ViewStyle>;
+    testID?: string;
+    accessibilityLabel?: string;
+  }
+> {}
 
 export function defaultOnOverflowMenuPress(parameter: OnOverflowMenuPressParams): void;
 export function overflowMenuPressHandlerActionSheet(parameter: OnOverflowMenuPressParams): void;
