@@ -3,7 +3,7 @@
  */
 import * as React from 'react';
 import { StyleSheet, View, TouchableWithoutFeedback, Platform } from 'react-native';
-import TouchableItem from './TouchableItem';
+import { PlatformPressable } from '@react-navigation/elements';
 import type { ViewStyleProp } from 'react-native/Libraries/StyleSheet/StyleSheet';
 import { useTheme } from '@react-navigation/native';
 
@@ -75,7 +75,7 @@ export function HeaderButton(props: HeaderButtonProps): React.Node {
   const handlePress = () => onPress && requestAnimationFrame(onPress);
 
   return (
-    <TouchableItem
+    <PlatformPressable
       borderless
       onPress={handlePress}
       hitSlop={BUTTON_HIT_SLOP}
@@ -85,7 +85,7 @@ export function HeaderButton(props: HeaderButtonProps): React.Node {
       {...other}
     >
       <View>{ButtonElement}</View>
-    </TouchableItem>
+    </PlatformPressable>
   );
 }
 

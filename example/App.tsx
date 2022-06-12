@@ -19,8 +19,8 @@ import { OverflowMenuProvider } from 'react-navigation-header-buttons';
 // just for custom overflow menu onPress action
 import { ActionSheetProvider } from '@expo/react-native-action-sheet';
 import { StatusBar } from 'expo-status-bar';
-import { createStackNavigator } from '@react-navigation/stack';
 import { ThemeContext, ThemeProvider } from './ThemeProvider';
+import { createStackNavigator } from '@react-navigation/stack';
 // import { createNativeStackNavigator as createStackNavigator } from 'react-native-screens/native-stack';
 
 const screens = {

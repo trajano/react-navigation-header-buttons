@@ -2,7 +2,7 @@
 import * as React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import type { ViewStyleProp } from 'react-native/Libraries/StyleSheet/StyleSheet';
-import TouchableItem from '../../TouchableItem';
+import { PlatformPressable as TouchableItem } from '@react-navigation/elements';
 import { useTheme } from '@react-navigation/native';
 
 export type Props = {
